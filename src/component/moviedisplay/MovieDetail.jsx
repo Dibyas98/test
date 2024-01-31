@@ -5,10 +5,11 @@ import BookDetail from '../bookovie/BookDetail';
 
 export default function MovieDetail() {
     const {movie,dia,setDia} = useContext(Data)
+    const img= movie.image?movie.image.medium:null
   return (
     <div className='moviedetail'>
       <div className='moviecontainer'>
-        {movie.image?<img src={movie.image.original} alt="" />:null}
+        {/* {movie.image?<img src={img} alt="" />:<img src=''/>} */}
         <div>
             <h1>{movie.name}</h1>
             <h2 style={{fontStyle:'italic'}}>Lang:-{movie.language}</h2>
