@@ -2,10 +2,15 @@ import React, { useContext } from 'react'
 import "./moviedetail.css"
 import { Data } from '../store/Store'
 import BookDetail from '../bookovie/BookDetail';
+import { useNavigate } from 'react-router-dom';
 
 export default function MovieDetail() {
     const {movie,dia,setDia} = useContext(Data)
     const img= movie.image?movie.image.medium:null
+    const navigate = useNavigate();
+    if(Object.keys(movie).length === 0){
+      return navigate('/')
+    }
   return (
     <div className='moviedetail'>
       <div className='moviecontainer'>
